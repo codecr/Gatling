@@ -49,6 +49,6 @@ class BasicSimulation extends Simulation {
         .get("/contacto")
     )	
   setUp(
-    scn.inject(constantConcurrentUsers(40000).during(300.seconds))
+    scn.inject(constantConcurrentUsers(20000).during(300.seconds))
   ).protocols(httpConf)
 }
