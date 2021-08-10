@@ -49,6 +49,6 @@ class BasicSimulation extends Simulation {
         .get("/contacto")
     )	
   setUp(
-    scn.inject(rampUsers(100).during(300.seconds))
+    scn.inject(rampUsers(10000).during(300.seconds))
   ).protocols(httpConf)
 }
