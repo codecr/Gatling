@@ -15,7 +15,7 @@ class BasicSimulation extends Simulation {
   val httpConf = http
     .baseUrl("https://inclusionfinanciera.gob.sv/")
 
-  val scn = scenario("scenario1")
+  val scn = scenario("scenario3")
     .exec(
       http("Home")
         .get("/")
@@ -49,6 +49,6 @@ class BasicSimulation extends Simulation {
         .get("/contacto")
     )	
   setUp(
-    scn.inject(rampUsers(10000).during(300.seconds))
+    scn.inject(constantConcurrentUsers(10000).during(300.seconds))
   ).protocols(httpConf)
 }
